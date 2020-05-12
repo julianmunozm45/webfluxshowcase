@@ -14,6 +14,6 @@ class ProfileRouter(private val handler: ProfileHandler) {
         GET("/profiles/{id}", handler::getById)
         DELETE("/profiles/{id}", handler::deleteById)
         POST("/profiles", handler::create)
-        PUT("/profiles/{id}", handler::updateById)
+        PUT("/profiles/{id}", handler::create)
     }
 }

@@ -2,7 +2,6 @@ package com.julianmunozm45.webfluxshowcase.handler
 
 import com.julianmunozm45.webfluxshowcase.model.Profile
 import com.julianmunozm45.webfluxshowcase.service.ProfileService
-import org.bson.types.ObjectId
 import org.reactivestreams.Publisher
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Component
@@ -55,5 +54,5 @@ class ProfileHandler(private val profileService: ProfileService) {
 
     private fun Publisher<Profile>.toWriteResponse() = defaultWriteResponse(this)
 
-    private fun id(req: ServerRequest) = ObjectId(req.pathVariable("id"))
+    private fun id(req: ServerRequest) = req.pathVariable("id")
 }
