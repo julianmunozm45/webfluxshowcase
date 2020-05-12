@@ -1,10 +1,12 @@
 package com.julianmunozm45.webfluxshowcase.model
 
-import org.springframework.data.annotation.Id
+import org.bson.codecs.pojo.annotations.BsonId
+import org.bson.types.ObjectId
 import org.springframework.data.mongodb.core.mapping.Document
 
 @Document
 data class Profile(
-        @Id val id: String? = null,
-        val email: String
+        @BsonId
+        val id: ObjectId = ObjectId.get(),
+        val email: String = ""
 )
